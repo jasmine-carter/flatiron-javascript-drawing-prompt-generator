@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_16_013100) do
+ActiveRecord::Schema.define(version: 2020_12_16_024953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "descriptions", force: :cascade do |t|
+    t.bigint "prompt_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prompt_id"], name: "index_descriptions_on_prompt_id"
+  end
 
   create_table "nouns", force: :cascade do |t|
     t.string "value"
@@ -45,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_013100) do
     t.index ["prompt_id"], name: "index_verbs_on_prompt_id"
   end
 
+  add_foreign_key "descriptions", "prompts"
   add_foreign_key "nouns", "prompts"
   add_foreign_key "styles", "prompts"
   add_foreign_key "verbs", "prompts"
