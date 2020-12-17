@@ -2,9 +2,9 @@ class Noun < ApplicationRecord
   has_many :sentences
   has_many :prompts, through: :sentences
 
-  def self.random_noun(prompt)
+  def self.random_noun
     value = Noun.randomizer.sample
-    Noun.create(value: value, prompt: prompt.id)
+    Noun.create(value: value)
   end
 
 
