@@ -1,3 +1,4 @@
 class Verb < ApplicationRecord
-  belongs_to :prompt
+  has_many :sentences
+  has_many :prompts, through: :sentences
 end

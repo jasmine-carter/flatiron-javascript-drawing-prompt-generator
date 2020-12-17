@@ -1,5 +1,6 @@
 class Noun < ApplicationRecord
-  belongs_to :prompt
+  has_many :sentences
+  has_many :prompts, through: :sentences
 
   def self.random_noun(prompt)
     value = Noun.randomizer.sample

@@ -1,3 +1,3 @@
 class Style < ApplicationRecord
-  belongs_to :prompt
+  has_many :prompts
 end
