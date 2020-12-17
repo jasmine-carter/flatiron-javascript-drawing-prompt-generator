@@ -1,2 +1,3 @@
 class PromptsController < ApplicationController
+
 end
