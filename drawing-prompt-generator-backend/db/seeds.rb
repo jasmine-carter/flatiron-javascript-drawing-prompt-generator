@@ -27,3 +27,7 @@ styles = ["Jo Jo's Bizarre Circus",
 adjectives.each do |adjective|
   Adjective.create(value: adjective)
 end
+
+styles.each do |style|
+  Style.create(value: style)
+end
