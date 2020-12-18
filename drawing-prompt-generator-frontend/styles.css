@@ -4,7 +4,7 @@ button {
     border: none;
     margin: 10;
     padding: 10;
-    margin-top: 40px;
+    margin-top: 30px;
     cursor: pointer;
     font-family: Verdana;
     font-size: 1.5rem;
@@ -54,7 +54,7 @@ H1 {
   color: #F55F20;
 }
 .Generator-Result {
-  top:35%;
+  margin-top:170px; 
   text-align: center;
   font-weight: 800;
   color: #ffa500;
