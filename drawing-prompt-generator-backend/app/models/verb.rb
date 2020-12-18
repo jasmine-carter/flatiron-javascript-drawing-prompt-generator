@@ -6,5 +6,5 @@ class Verb < ApplicationRecord
     value = Faker::Verb.ing_form
     Verb.create(value: value)
   end
-  
+
 end

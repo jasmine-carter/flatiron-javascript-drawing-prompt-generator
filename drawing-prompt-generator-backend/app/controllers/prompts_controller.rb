@@ -5,7 +5,7 @@ class PromptsController < ApplicationController
     #if no values are provided, create random prompt
     #else create prompts based on values from user
     binding.pry
-    verb = Verb.randomizer
+    verb = Verb.random_verb
     noun = Noun.random_noun
     adjective = Adjective.random_adjective#find or create when user submitted
     style = Style.random_style
