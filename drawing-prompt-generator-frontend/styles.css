@@ -1,27 +1,21 @@
 
 button {
-    appearance: button;
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: center;
-    align-items: flex-start;
-    cursor: default;
-    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
-    box-sizing: border-box;
-    margin: 0em;
-    font: 400 13.3333px Arial;
-    padding: 1px 6px;
-    border-width: 2px;
-    border-style: outset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
+    background: none;
+    border: none;
+    margin: 10;
+    padding: 10;
+    margin-top: 40px;
+    cursor: pointer;
+    font-family: Verdana;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFDF77;
+}
+button:hover{
+  color: #F55F20;
+  font-size: 1.75rem;
+  font-weight: 800;
+  transform: rotate(10deg);
 }
 
 .Generator-Banner {
@@ -38,26 +32,6 @@ button {
   text-align: center;
 }
 
-.Generator-Menu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  color:  #ffa500;
-  text-align: center;
-  padding: 14px 16px;
-  text-decorator: none;
-}
-
-li a:hover{
-  background-color: #111
-}
 .Generator-Result {
   position: absolute;
   top:45%;
