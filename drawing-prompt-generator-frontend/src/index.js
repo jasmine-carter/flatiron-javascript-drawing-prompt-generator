@@ -29,5 +29,11 @@ function generatePrompt() {
   })
   .then(function(object) {
     console.log(object)
+    addPromptToSection(object)
   })
+}
+
+function addPromptToSection(object){
+  let promptSection = document.querySelector(".Generator-Result")
+  promptSection.innerHTML = object.value
 }
