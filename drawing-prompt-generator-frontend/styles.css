@@ -11,10 +11,14 @@ button {
     font-weight: 800;
     color: #FCCF3E;
 }
+.divider{
+  width:160px;
+  display:inline-block;
+}
 button:hover{
   color: #F55F20;
-  font-size: 1.75rem;
-  font-weight: 800;
+  */font-size: 1.75rem;*/
+  font-weight: 1000;
   transform: rotate(-5deg);
 }
 
