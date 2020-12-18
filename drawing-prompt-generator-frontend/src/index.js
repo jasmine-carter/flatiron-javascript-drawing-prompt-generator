@@ -3,6 +3,9 @@
 //design header banner
 //set up div that will receive returned prompt value to user when generated
 //set up top level menu that you can select to see all prompt images?
+document.addEventListener("DOMContentLoaded", () =>{
+  renderUserPromptForm()
+})
 
 let promptButton = document.querySelector(".get-prompt")
 promptButton.addEventListener("click", event=> {
@@ -47,6 +50,10 @@ function renderUserPromptForm(){
   let userFormButton = document.querySelector(".user-generated-prompt")
   let userForm = document.querySelector(".user-prompt-form")
   userFormButton.addEventListener("click", event=> {
-    userForm.style =""
+    if (userForm.style.display == "none") {
+      userForm.style.display =""
+    }
+    else
+    userForm.style.display = "none"
   })
 }
