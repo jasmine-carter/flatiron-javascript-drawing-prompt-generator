@@ -58,3 +58,15 @@ li a {
 li a:hover{
   background-color: #111
 }
+.Generator-Result {
+  position: absolute;
+  top:45%;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  color: #ffa500;
+  font-size: 6rem;
+  font-family: Verdana;
+  max-width: 82rem;
+}
