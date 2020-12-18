@@ -5,7 +5,7 @@ class Adjective < ApplicationRecord
 
 
   def self.random_adjective
-    Adjective.all.sample.value
+    Adjective.all.sample
   end
 
 end
