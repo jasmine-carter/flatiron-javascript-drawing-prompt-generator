@@ -37,3 +37,16 @@ function addPromptToSection(object){
   let promptSection = document.querySelector(".Generator-Result")
   promptSection.innerHTML = object.value
 }
+
+//create class for Prompt here
+//from response in generatePrompt(), build new instance of Prompt class
+
+//create a method to submit a user generated prompt
+
+function renderUserPromptForm(){
+  let userFormButton = document.querySelector(".user-generated-prompt")
+  let userForm = document.querySelector(".user-prompt-form")
+  userFormButton.addEventListener("click", event=> {
+    userForm.style =""
+  })
+}
