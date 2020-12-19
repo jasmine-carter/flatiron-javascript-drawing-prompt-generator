@@ -1,15 +1,22 @@
 
-//design button to generate request to prompt create
-//design header banner
-//set up div that will receive returned prompt value to user when generated
-//set up top level menu that you can select to see all prompt images?
+class Prompt {
+  constructor(object) {
+    this.value = object.value;
+    this.style = object.style
+  }
+
+  prompt_idea(){
+    return `${this.value}`
+  }
+
+}
+
 document.addEventListener("DOMContentLoaded", () =>{
   renderUserPromptForm()
 })
 
 let promptButton = document.querySelector(".get-prompt")
 promptButton.addEventListener("click", event=> {
-  console.log("you done clicked it!")
   generatePrompt()
 })
 
@@ -31,17 +38,17 @@ function generatePrompt() {
     return response.json();
   })
   .then(function(object) {
-    console.log(object)
-    addPromptToSection(object)
+    let newPrompt = new Prompt(object)
+    addPromptToSection(newPrompt)
+    console.log(newPrompt.prompt_idea())
   })
 }
 
-function addPromptToSection(object){
+function addPromptToSection(newPrompt){
   let promptSection = document.querySelector(".Generator-Result")
-  promptSection.innerHTML = object.value
+  promptSection.innerHTML = newPrompt.prompt_idea()
 }
 
-//create class for Prompt here
 //from response in generatePrompt(), build new instance of Prompt class
 
 //create a method to submit a user generated prompt
@@ -51,7 +58,7 @@ function renderUserPromptForm(){
   let userForm = document.querySelector(".user-prompt-form")
   userFormButton.addEventListener("click", event=> {
     if (userForm.style.display == "none") {
-      userForm.style.display =""
+      userForm.style.display ="block"
     }
     else
     userForm.style.display = "none"
