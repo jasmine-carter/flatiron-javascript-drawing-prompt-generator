@@ -1,8 +1,8 @@
 
 class Prompt {
   constructor(object) {
-    this.value = object.value;
-    this.style = object.style
+    this.value = object.sentences[0].value;
+    this.style = object.style_id
   }
 
   prompt_idea(){
@@ -39,7 +39,8 @@ function generatePrompt() {
   .then(function(object) {
     let newPrompt = new Prompt(object)
     addPromptToSection(newPrompt)
-    console.log(newPrompt.prompt_idea())
+    console.log(newPrompt)
+    console.log(object.style_id)
   })
 }
 
@@ -81,7 +82,8 @@ function generateUserPrompt(noun, verb, adjective, style ){
   })
   .then(function(object) {
     let userGeneratedPrompt = new Prompt (object)
-    //addPromptToSection(newPrompt)
+    console.log(userGeneratedPrompt)
+    addPromptToSection(userGeneratedPrompt)
   })
 }
 
