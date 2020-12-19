@@ -13,6 +13,7 @@ class Prompt {
 
 document.addEventListener("DOMContentLoaded", () =>{
   renderUserPromptForm()
+  renderUserImageForm()
 })
 
 let promptButton = document.querySelector(".get-prompt")
@@ -76,3 +77,19 @@ function renderUserPromptForm(){
     userForm.style.display = "none"
   })
 }
+
+function renderUserImageForm(){
+  let userImageButton = document.querySelector(".add-image-to-prompt")
+  let imageForm = document.querySelector(".submit-image-form")
+  userImageButton.addEventListener("click", event => {
+    if (imageForm.style.display == "none") {
+      imageForm.style.display = "block"
+    }
+    else
+      imageForm.style.display = "none"
+  })
+}
+
+//build out function to enable user to add image url to their prompt generated
+//build out function to get all prompts by style
+// build out function to show images for a prompt
