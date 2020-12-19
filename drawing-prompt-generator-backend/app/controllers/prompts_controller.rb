@@ -6,7 +6,6 @@ class PromptsController < ApplicationController
   end
 
   def create
-    #binding.pry
     if params["noun"].present?
       noun = Noun.find_or_create_by(value: params["noun"])
       verb = Verb.find_or_create_by(value: params["verb"])
@@ -14,7 +13,6 @@ class PromptsController < ApplicationController
       style = Style.find_or_create_by(value: params["style"])
       prompt = Prompt.create(style: style)
       sentence = Sentence.create(prompt: prompt, value: "A #{adjective.value} #{noun.value}, #{verb.value} in the style of #{style.value}", noun_id: noun.id, verb_id: verb.id, adjective_id: adjective.id)
-      binding.pry
       render json: prompt.to_json(:include => {
         :sentences => {:only => [:value]}
         })
