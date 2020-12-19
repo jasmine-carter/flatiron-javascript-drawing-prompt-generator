@@ -42,8 +42,6 @@ function generatePrompt(noun='', verb ='', adjective='', style='') {
   .then(function(object) {
     let newPrompt = new Prompt(object)
     addPromptToSection(newPrompt)
-    console.log(newPrompt)
-    console.log(object.style_id)
   })
 }
 

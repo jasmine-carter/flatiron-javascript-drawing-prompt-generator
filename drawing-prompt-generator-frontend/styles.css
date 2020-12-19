@@ -73,6 +73,12 @@ H1 {
   width: stretch;
   height: auto;
 }
+.submit-image-form {
+  background: #FFDF77;
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+}
 .input-text{
   border-radius: 5px;
   height: 2rem;
@@ -88,12 +94,10 @@ button:focus {outline:0;}
   bottom: 0;
   left: 0;
   right: 0;
-  height: 8rem;
+  height: auto;
   display: flex;
-  flex-direction: row;
+  width: stretch;
   justify-content: space-between;
   padding: 0 1rem;
   background: #fff;
-    transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transition-delay: 1s;
 }
