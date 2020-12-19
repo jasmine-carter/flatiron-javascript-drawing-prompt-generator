@@ -57,7 +57,7 @@ document.querySelector(".submit").addEventListener("click", function (event) {
   let noun = document.querySelector("input[name='noun']").value
   let verb = document.querySelector("input[name='verb']").value
   let adjective = document.querySelector("input[name='adjective']").value
-  let style = document.querySelector("input[name='adjective']").value
+  let style = document.querySelector("input[name='style']").value
   event.preventDefault()
   generateUserPrompt(noun, verb, adjective, style)
 
