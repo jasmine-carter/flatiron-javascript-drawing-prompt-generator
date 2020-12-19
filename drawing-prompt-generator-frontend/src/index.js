@@ -52,19 +52,28 @@ function addPromptToSection(newPrompt){
 
 
 //create a method to submit a user generated prompt
+document.querySelector(".submit").addEventListener("click", function (event) {
+  let noun = document.querySelector("input[name='noun']").value
+  let verb = document.querySelector("input[name='verb']").value
+  let adjective = document.querySelector("input[name='adjective']").value
+  let style = document.querySelector("input[name='adjective']").value
+  event.preventDefault()
+  generateUserPrompt(noun, verb, adjective, style)
+
+})
 
 function generateUserPrompt(noun, verb, adjective, style ){
-  return feth("http://localhost:3000/prompts", {
+  return fetch("http://localhost:3000/prompts", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json"
     },
     body: JSON.stringify({
-      "noun": `${noun}`,
-      "verb": `${verb}`,
-      "adjective": `${adjective}`,
-      "style": `${style}`
+      "noun": noun,
+      "verb": verb,
+      "adjective": adjective,
+      "style": style
     })
   })
   .then(function(response) {
