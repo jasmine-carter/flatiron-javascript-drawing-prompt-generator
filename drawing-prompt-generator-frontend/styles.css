@@ -1,3 +1,10 @@
+.Generator {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+}
 
 button {
     background: none;
@@ -75,3 +82,18 @@ H1 {
   margin: 3px;
 }
 button:focus {outline:0;}
+
+.Footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background: #fff;
+    transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition-delay: 1s;
+}

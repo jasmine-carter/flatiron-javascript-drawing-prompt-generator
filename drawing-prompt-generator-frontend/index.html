@@ -2,11 +2,18 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <style>
+    body {
+      height: 100%;
+      overflow-y: hidden;
+    }
+    </style>
     <title></title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div>
+    <div class=Generator>
       <div class="user-prompt-form" style="display:none">
         <form class="create-prompt-form">
           <h1>Create Your Own Prompt!</h1>
@@ -49,7 +56,7 @@
           />
           </form>
         </div>
-      <div class="Generator">
+      <div>
         <header class="Generator-Banner">
           Get Your Prompt
         </header>
@@ -63,6 +70,10 @@
       <div class="Generator-Result"> Click "Get Prompted" to see your Drawing Prompt! </div>
 
     </div>
+  </div>
+    <footer class="Footer">
+      <button class="add-image-to-prompt">Submit Your Image!</button>
+    </footer>
   </body>
   <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
 </html>
