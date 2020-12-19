@@ -16,7 +16,7 @@ class PromptsController < ApplicationController
         #create a class method to DRY this up and remove from controller?
       sentence = Sentence.create(prompt: prompt, value: "A #{adjective.value} #{noun.value}, #{verb.value} in the style of #{style.value}", noun_id: noun.id, verb_id: verb.id, adjective_id: adjective.id)
       #create a class method for prompt to solve for the below line
-      render json: prompt.sentences.first
+      render json: prompt.user_facing_prompt
     #if no values are provided, create random prompt
     #else create prompts based on values from user
     else
@@ -26,7 +26,7 @@ class PromptsController < ApplicationController
       style = Style.random_style
       prompt = Prompt.create(style: style)
       sentence = Sentence.create(prompt: prompt, value: "A #{adjective.value} #{noun.value}, #{verb.value} in the style of #{style.value}", noun_id: noun.id, verb_id: verb.id, adjective_id: adjective.id)
-      render json: prompt.sentences.first
+      render json: prompt.user_facing_prompt
     end
   end
 
