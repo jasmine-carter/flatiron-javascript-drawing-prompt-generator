@@ -17,12 +17,35 @@ styles = ["Jo Jo's Bizarre Circus",
   "Marvel Comics",
   "Piet Mondrian",
   "Dark Souls",
-  "Bloodborn",
+  "Bloodborne",
   "Skyrim",
   "Peppa Pig",
   "Hey Arnold"
 ]
 
+verbs = [
+  "skipping",
+  "knitting",
+  "screaming",
+  "sobbing",
+  "laughing",
+  "dancing",
+  "leaning",
+  "writing",
+  "kicking",
+  "baking",
+  "cooking",
+  "diving",
+  "flying",
+  "running",
+  "sailing",
+  "drawing",
+  "typing",
+  "sleeping",
+  "crying",
+  "laughing"
+
+]
 
 adjectives.each do |adjective|
   Adjective.create(value: adjective)
@@ -30,4 +53,8 @@ end
 
 styles.each do |style|
   Style.create(value: style)
+end
+
+verbs.each do |verb|
+  Verb.create(value: verb)
 end
