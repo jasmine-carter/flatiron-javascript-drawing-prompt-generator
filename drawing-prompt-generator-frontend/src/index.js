@@ -92,8 +92,10 @@ function renderUserImageForm(){
 }
 
 document.querySelector(".submit-image").addEventListener("click", function (event) {
-  let imageUrl = document.querySelector("input[name='image']").value
+  let image = document.querySelector("input[name='image']").value
+  let prompt = document.querySelector(".Generator-Result").id
   event.preventDefault()
+  addImageToPrompt(image, prompt)
   //function that submits form data goes here
 })
 
