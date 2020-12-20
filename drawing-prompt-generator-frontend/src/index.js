@@ -3,11 +3,13 @@ class Prompt {
   constructor(object) {
     this.value = object.sentences[0].value;
     this.style = object.style_id
+    this.id = object.id
   }
 
   prompt_idea(){
     return `${this.value}`
   }
+  //add image
 
 }
 
@@ -42,6 +44,7 @@ function generatePrompt(noun='', verb ='', adjective='', style='') {
   })
   .then(function(object) {
     let newPrompt = new Prompt(object)
+    console.log(object)
     addPromptToSection(newPrompt)
   })
 }
@@ -50,11 +53,9 @@ function generatePrompt(noun='', verb ='', adjective='', style='') {
 function addPromptToSection(newPrompt){
   let promptSection = document.querySelector(".Generator-Result")
   promptSection.innerHTML = newPrompt.prompt_idea()
+  promptSection.id = newPrompt.id
 }
 
-
-
-//create a method to submit a user generated prompt
 document.querySelector(".submit").addEventListener("click", function (event) {
   let noun = document.querySelector("input[name='noun']").value
   let verb = document.querySelector("input[name='verb']").value
@@ -89,6 +90,14 @@ function renderUserImageForm(){
       imageForm.style.display = "none"
   })
 }
+
+document.querySelector(".submit-image").addEventListener("click", function (event) {
+  let imageUrl = document.querySelector("input[name='image']").value
+  event.preventDefault()
+  //function that submits form data goes here
+})
+
+//function addImageToPrompt()
 
 //build out function to enable user to add image url to their prompt generated
 //build out function to get all prompts by style
