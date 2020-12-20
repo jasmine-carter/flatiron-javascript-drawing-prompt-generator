@@ -34,7 +34,10 @@ class PromptsController < ApplicationController
   def update
     binding.pry
     prompt = Prompt.find_by(id: params["id"])
-    prompt.image_url = params["image"]
+    image = Image.create(prompt_id: prompt.id, url: params["image"])
+    render json: prompt.to_json(:include => {
+      :images => {:only => [:url]}
+      })
   end
 
 
