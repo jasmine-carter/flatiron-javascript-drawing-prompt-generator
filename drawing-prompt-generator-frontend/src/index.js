@@ -100,8 +100,8 @@ document.querySelector(".submit-image").addEventListener("click", function (even
 })
 
 function addImageToPrompt(image, prompt) {
-  return fetch("http://localhost:3000/prompts/${prompt}", {
-    method: "POST",
+  return fetch(`http://localhost:3000/prompts/${prompt}`, {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
       "Accept": "application/json"
