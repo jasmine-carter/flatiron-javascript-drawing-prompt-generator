@@ -10,8 +10,14 @@ class Prompt {
     return `${this.value}`
   }
   //add image
-
 }
+
+class Image {
+  constructor(object) {
+    this.url
+  }
+}
+
 
 document.addEventListener("DOMContentLoaded", () =>{
   renderUserPromptForm()
@@ -62,6 +68,10 @@ document.querySelector(".submit").addEventListener("click", function (event) {
   let adjective = document.querySelector("input[name='adjective']").value
   let style = document.querySelector("input[name='style']").value
   event.preventDefault()
+  document.querySelector("input[name='noun']").value = ""
+  document.querySelector("input[name='verb']").value = ""
+  document.querySelector("input[name='adjective']").value= ""
+  document.querySelector("input[name='style']").value = ""
   generatePrompt(noun, verb, adjective, style)
 
 })
@@ -111,7 +121,7 @@ function addImageToPrompt(image, prompt) {
     })
   })
   .then(function(response) {
-    return response.json();
+    return response.json()
   })
   .then(function(object) {
     console.log(object)
