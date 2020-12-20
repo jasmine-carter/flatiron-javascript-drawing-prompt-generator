@@ -91,7 +91,7 @@ button:focus {outline:0;}
 
 .Footer {
   position: absolute;
-  bottom: 0;
+  bottom: 40px;
   left: 0;
   right: 0;
   height: auto;
