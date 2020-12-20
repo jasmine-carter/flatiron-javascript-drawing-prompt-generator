@@ -1,5 +1,6 @@
 Adjective.delete_all
 Style.delete_all
+Verb.delete_all
 
 adjectives = ["angry", "sad", "depressed", "smelly", "stylish", "overheated", "stressed", "glamorous", "sassy", "bald", "fancy", "fit", "handsome", "chubby", "hairy", "grumpy", "confused", "glittery"]
 
