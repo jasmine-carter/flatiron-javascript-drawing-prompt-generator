@@ -101,7 +101,7 @@ function renderUserImageForm(){
   })
 }
 
-document.querySelector(".submit-image").addEventListener("click", function (event) {
+document.querySelector("#submit-image").addEventListener("click", function (event) {
   let image = document.querySelector("input[name='image']").value
   let prompt = document.querySelector(".Generator-Result").id
   event.preventDefault()
