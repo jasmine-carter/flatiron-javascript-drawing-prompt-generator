@@ -97,8 +97,25 @@ document.querySelector(".submit-image").addEventListener("click", function (even
   //function that submits form data goes here
 })
 
-//function addImageToPrompt()
+function addImageToPrompt(image, prompt) {
+  return fetch("http://localhost:3000/prompts/${prompt}", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      "image": image
+    })
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(object) {
+    console.log(object)
+  })
+}
 
-//build out function to enable user to add image url to their prompt generated
 //build out function to get all prompts by style
 // build out function to show images for a prompt
+//
