@@ -31,5 +31,11 @@ class PromptsController < ApplicationController
     end
   end
 
+  def update
+    binding.pry
+    prompt = Prompt.find_by(id: params["id"])
+    prompt.image_url = params["image"]
+  end
+
 
 end
