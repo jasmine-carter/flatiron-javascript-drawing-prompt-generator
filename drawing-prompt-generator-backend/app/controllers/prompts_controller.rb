@@ -32,11 +32,15 @@ class PromptsController < ApplicationController
   end
 
   def update
-    prompt = Prompt.find_by(id: params["id"])
-    image = Image.create(prompt_id: prompt.id, url: params["image"])
-    render json: prompt.to_json(:include => {
+    if params["image"].present?
+      prompt = Prompt.find_by(id: params["id"])
+      image = Image.create(prompt_id: prompt.id, url: params["image"])
+      render json: prompt.to_json(:include => {
       :images => {:only => [:url, :id]}
-      })
+        })
+    else
+      render json: "There's no image here dingus"
+    end
   end
 
 
