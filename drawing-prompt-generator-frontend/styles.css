@@ -101,3 +101,10 @@ button:focus {outline:0;}
   padding: 0 1rem;
   background: #fff;
 }
+
+.see-image-form {
+  background: #FFDF77;
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+}

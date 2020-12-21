@@ -22,6 +22,7 @@ class Image {
 document.addEventListener("DOMContentLoaded", () =>{
   renderUserPromptForm()
   renderUserImageForm()
+  renderImageMenu()
 })
 
 let promptButton = document.querySelector(".get-prompt")
@@ -129,6 +130,18 @@ function addImageToPrompt(image, prompt) {
   })
 }
 
+function renderImageMenu(){
+  let seeRandomImages = document.querySelector(".see-all-images")
+  let imagesForm = document.querySelector(".see-image-form")
+  seeRandomImages.addEventListener("click", event => {
+    if (imagesForm.style.display == "none") {
+      imagesForm.style.display = "block"
+      console.log("clicked!")
+    }
+    else
+      imagesForm.style.display = "none"
+  })
+}
 //build out function to get all prompts by style
 // build out function to show images for a prompt
 //
