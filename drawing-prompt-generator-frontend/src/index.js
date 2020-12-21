@@ -135,15 +135,7 @@ function addImageToPrompt(image, prompt) {
 
 function getRandomImages(){
   //this function will hit create prompt endpoint
-  return fetch("http://localhost:3000/images", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Accept": "application/json"
-    },
-    body: JSON.stringify({
-    })
-  })
+  fetch("http://localhost:3000/images")
   .then(function(response) {
     return response.json();
   })
