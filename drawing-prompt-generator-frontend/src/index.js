@@ -93,9 +93,11 @@ function renderUserPromptForm(){
 function renderUserImageForm(){
   let userImageButton = document.querySelector(".add-image-to-prompt")
   let imageForm = document.querySelector(".submit-image-form")
+  let imagesForm = document.querySelector(".see-image-form")
   userImageButton.addEventListener("click", event => {
     if (imageForm.style.display == "none") {
       imageForm.style.display = "block"
+      imagesForm.style.display = "none"
     }
     else
       imageForm.style.display = "none"
@@ -133,9 +135,11 @@ function addImageToPrompt(image, prompt) {
 function renderImageMenu(){
   let seeRandomImages = document.querySelector(".see-all-images")
   let imagesForm = document.querySelector(".see-image-form")
+  let imageUrlForm = document.querySelector(".submit-image-form")
   seeRandomImages.addEventListener("click", event => {
     if (imagesForm.style.display == "none") {
       imagesForm.style.display = "block"
+      imageUrlForm.style.display = "none"
       console.log("clicked!")
     }
     else
