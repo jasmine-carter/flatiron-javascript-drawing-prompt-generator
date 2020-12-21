@@ -132,20 +132,38 @@ function addImageToPrompt(image, prompt) {
   })
 }
 
-function renderImageMenu(){
-  let seeRandomImages = document.querySelector(".see-all-images")
-  let imagesForm = document.querySelector(".see-image-form")
-  let imageUrlForm = document.querySelector(".submit-image-form")
-  seeRandomImages.addEventListener("click", event => {
-    if (imagesForm.style.display == "none") {
-      imagesForm.style.display = "block"
-      imageUrlForm.style.display = "none"
-      console.log("clicked!")
-    }
-    else
-      imagesForm.style.display = "none"
+
+function getRandomImages(){
+  //this function will hit create prompt endpoint
+  return fetch("http://localhost:3000/images", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify({
+    })
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(object) {
+    console.log(object)
   })
 }
+
+function renderImageMenu(){
+  let seeRandomImages = document.querySelector(".see-all-images")
+  //let imagesForm = document.querySelector(".see-image-form")
+  //let imageUrlForm = document.querySelector(".submit-image-form")
+  seeRandomImages.addEventListener("click", event => {
+    console.log("clicked!")
+    event.preventDefault()
+    getRandomImages()
+  })
+}
+
+
 //build out function to get all prompts by style
 // build out function to show images for a prompt
 //
