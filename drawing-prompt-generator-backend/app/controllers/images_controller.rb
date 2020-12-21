@@ -2,8 +2,11 @@ class ImagesController < ApplicationController
 
 
   def index
-    images = Image.all
-    render json: {test: "You did it!"}
+    #binding.pry
+    images = Image.all.sample(4)
+    render json: images.to_json(:include=> {
+      :prompt => {:only => :sentences }
+      })
   end
 
 end
