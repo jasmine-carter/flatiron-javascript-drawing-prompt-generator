@@ -15,7 +15,7 @@ class Prompt {
 class Image {
   constructor(object) {
     this.url = object.attributes.url
-    this.image_caption = object.attributes.image_caption
+    this.caption = object.attributes.image_caption
   }
 }
 
@@ -145,6 +145,9 @@ function getRandomImages(){
     for (const image of object.data) {
       let newImage = new Image(image)
       console.log(newImage)
+      createImageCards(newImage)
+      document.querySelector(".Generator-Result").style.display = "none"
+      //call createImageCards
     }
     //call add image cards to  view - and button to clear them
   })
@@ -163,10 +166,16 @@ function renderImageMenu(){
 
 function createImageCards(image){
   let card = document.createElement("div");
-  let cardContainer =  document.querySelector("#image-collection")
-  let img = document.createElement("IMG")
+  let cardContainer =  document.querySelector("#image-collection");
+  let img = document.createElement("IMG");
+  let h2 = document.createElement("H2");
   card.className = "image-card"
   img.className = "image-avatar"
+  img.src = image.url
+  h2.textContent = image.caption
+  cardContainer.appendChild(card)
+  card.appendChild(img)
+  card.appendChild(h2)
 }
 //function for each random image, add a div to show the image
 
