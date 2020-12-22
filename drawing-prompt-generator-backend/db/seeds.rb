@@ -21,7 +21,9 @@ styles = ["Jo Jo's Bizarre Circus",
   "Bloodborne",
   "Skyrim",
   "Peppa Pig",
-  "Hey Arnold"
+  "Hey Arnold",
+  "The Magic Schoolbus",
+  "Arthur"
 ]
 
 verbs = [
