@@ -93,11 +93,9 @@ function renderUserPromptForm(){
 function renderUserImageForm(){
   let userImageButton = document.querySelector(".add-image-to-prompt")
   let imageForm = document.querySelector(".submit-image-form")
-  let imagesForm = document.querySelector(".see-image-form")
   userImageButton.addEventListener("click", event => {
     if (imageForm.style.display == "none") {
       imageForm.style.display = "block"
-      imagesForm.style.display = "none"
     }
     else
       imageForm.style.display = "none"
@@ -108,6 +106,7 @@ document.querySelector("#submit-image").addEventListener("click", function (even
   let image = document.querySelector("input[name='image']").value
   let prompt = document.querySelector(".Generator-Result").id
   event.preventDefault()
+  console.log("you're submitting an image to a prompt")
   document.querySelector("input[name='image']").value = ""
   addImageToPrompt(image, prompt)
   //function that submits form data goes here
