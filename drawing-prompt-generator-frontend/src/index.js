@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", () =>{
   renderUserPromptForm()
   renderUserImageForm()
   renderImageMenu()
+  document.querySelector(".close-images").style.display= "none"
+  clearRandomImages()
 })
 
 let promptButton = document.querySelector(".get-prompt")
@@ -107,11 +109,9 @@ document.querySelector("#submit-image").addEventListener("click", function (even
   let image = document.querySelector("input[name='image']").value
   let prompt = document.querySelector(".Generator-Result").id
   event.preventDefault()
-  console.log("you're submitting an image to a prompt")
   document.querySelector("input[name='image']").value = ""
   document.querySelector(".submit-image-form").style.display = "none"
   addImageToPrompt(image, prompt)
-  //function that submits form data goes here
 })
 
 function addImageToPrompt(image, prompt) {
@@ -147,16 +147,27 @@ function getRandomImages(){
       console.log(newImage)
       createImageCards(newImage)
       document.querySelector(".Generator-Result").style.display = "none"
-      //call createImageCards
+      document.querySelector("#image-collection").style.display = ""
+        document.querySelector(".close-images").style.display= ""
     }
     //call add image cards to  view - and button to clear them
   })
 }
 
+function clearRandomImages(){
+  document.querySelector(".close-images").addEventListener("click", function(event) {
+    let collection = document.querySelector("#image-collection")
+    for (i = 0; i < 4; i ++) {
+      collection.removeChild(collection.lastElementChild)
+    }
+    collection.style.display = "none"
+    document.querySelector(".Generator-Result").style.display = ""
+    document.querySelector(".close-images").style.display= "none"
+  })
+}
+
 function renderImageMenu(){
   let seeRandomImages = document.querySelector(".see-all-images")
-  //let imagesForm = document.querySelector(".see-image-form")
-  //let imageUrlForm = document.querySelector(".submit-image-form")
   seeRandomImages.addEventListener("click", event => {
     console.log("clicked!")
     event.preventDefault()
