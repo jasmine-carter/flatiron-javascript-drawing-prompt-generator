@@ -32,7 +32,7 @@ button:hover{
   margin: 2rem 0 1rem;
 
   justify-content: space-between;
-  background: #ffa500;
+  background: #FA8223;
   color: #fff;
   font-weight: 200;
   text-transform: uppercase;
@@ -101,10 +101,37 @@ button:focus {outline:0;}
   padding: 0 1rem;
   background: #fff;
 }
+.image-collection {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+}
+.image-card {
+  text-align: center;
+   border: grey solid 1px;
+   padding: 1rem;
+   width: 23rem;
+   height: 22rem;
+   display: inline-grid;
+   margin: 2rem 5rem;
+   position: relative;
+ }
+.image-avatar {
+  justify-self: center;
+ height: 12rem;
+ width: auto;
+}
 
-.see-image-form {
-  background: #FFDF77;
-  padding: 1rem;
-  width: stretch;
-  height: auto;
+.close-images {
+  background: none;
+  position: relative;
+  border: none;
+  margin: 10;
+  padding: 10;
+  margin-top: 30px;
+  font-family: Verdana;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #C80004;
 }
