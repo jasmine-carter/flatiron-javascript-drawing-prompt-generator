@@ -108,6 +108,7 @@ document.querySelector("#submit-image").addEventListener("click", function (even
   event.preventDefault()
   console.log("you're submitting an image to a prompt")
   document.querySelector("input[name='image']").value = ""
+  document.querySelector(".submit-image-form").style.display = "none"
   addImageToPrompt(image, prompt)
   //function that submits form data goes here
 })
