@@ -1,5 +1,10 @@
 class ImageSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :url
   belongs_to :prompt
+
+  attributes :url
+
+  attribute :image_caption do |object|
+    "#{object.prompt.user_facing_prompt}"
+  end
 end
