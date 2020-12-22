@@ -14,7 +14,8 @@ class Prompt {
 
 class Image {
   constructor(object) {
-    this.url
+    this.url = object.attributes.url
+    this.image_caption = object.attributes.image_caption
   }
 }
 
@@ -128,7 +129,6 @@ function addImageToPrompt(image, prompt) {
     return response.json()
   })
   .then(function(object) {
-    console.log(object)
   })
 }
 
@@ -140,7 +140,13 @@ function getRandomImages(){
     return response.json();
   })
   .then(function(object) {
-    console.log(object)
+    console.log(object.data)
+    //for each element in object array .. call new item
+    for (const image of object.data) {
+      let newImage = new Image(image)
+      console.log(newImage)
+    }
+    //call add image cards to  view - and button to clear them
   })
 }
 
@@ -154,6 +160,15 @@ function renderImageMenu(){
     getRandomImages()
   })
 }
+
+function createImageCards(image){
+  let card = document.createElement("div");
+  let cardContainer =  document.querySelector("#image-collection")
+  let img = document.createElement("IMG")
+  card.className = "image-card"
+  img.className = "image-avatar"
+}
+//function for each random image, add a div to show the image
 
 
 //build out function to get all prompts by style
