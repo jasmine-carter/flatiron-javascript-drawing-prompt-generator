@@ -32,6 +32,7 @@ class PromptsController < ApplicationController
   end
 
   def update
+    binding.pry
     if params["image"].present?
       prompt = Prompt.find_by(id: params["id"])
       image = Image.create(prompt_id: prompt.id, url: params["image"])
@@ -39,7 +40,7 @@ class PromptsController < ApplicationController
       :images => {:only => [:url, :id]}
         })
     else
-      render json: "There's no image here dingus"
+      render json: {message: "There's no image here dingus"}
     end
   end
 
