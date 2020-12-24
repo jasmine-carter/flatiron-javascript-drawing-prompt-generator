@@ -38,7 +38,7 @@ function generatePrompt(noun='', verb ='', adjective='', style='') {
   })
 }
 
-//takes newly generated prompt and adds to DOM
+
 function addPromptToSection(newPrompt){
   let promptSection = document.querySelector(".Generator-Result")
   promptSection.innerHTML = newPrompt.prompt_idea()
@@ -168,9 +168,3 @@ function createImageCards(image){
   card.appendChild(img)
   card.appendChild(h2)
 }
-//function for each random image, add a div to show the image
-
-
-//build out function to get all prompts by style
-// build out function to show images for a prompt
-//
