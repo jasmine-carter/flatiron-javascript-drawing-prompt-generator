@@ -77,6 +77,7 @@ document.querySelector(".submit").addEventListener("click", function (event) {
   document.querySelector("input[name='adjective']").value= ""
   document.querySelector("input[name='style']").value = ""
   generatePrompt(noun, verb, adjective, style)
+  document.querySelector(".user-prompt-form").style.display = "none"
 
 })
 
