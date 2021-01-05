@@ -45,6 +45,7 @@ function addPromptToSection(newPrompt){
   promptSection.id = newPrompt.id
 }
 
+
 document.querySelector(".submit").addEventListener("click", function (event) {
   let noun = document.querySelector("input[name='noun']").value
   let verb = document.querySelector("input[name='verb']").value
@@ -109,22 +110,42 @@ function addImageToPrompt(image, prompt) {
     return response.json()
   })
   .then(function(object) {
+    console.log(object)
+    if (object.message == "There's no image here dingus") {
+    console.log(object.message)}
+    //call handleError method here
+    handleError(object)
   })
 }
 
+function handleError(object){
+  let errorWindow = document.querySelector(".error")
+  errorWindow.innerText = object.message
+  setTiom
+}
 
 function getRandomImages(){
-  //this function will hit create prompt endpoint
   fetch("http://localhost:3000/images")
   .then(function(response) {
     return response.json();
   })
   .then(function(object) {
     console.log(object.data)
+    let allImages = object.data.sort(function(a, b) {
+      const imageA = a.attributes.image_caption.toLowerCase()
+      const imageB = b.attributes.image_caption.toLowerCase()
+      console.log(imageA[2], imageB[2])
+      console.log(imageA[2] > imageB[2])
+      if (imageA[2] > imageB[2]) {
+        return 1;
+      } else {
+        return -1;
+      }
+    })
     //for each element in object array .. call new item
-    for (const image of object.data) {
+    for (const image of allImages) {
       let newImage = new Image(image)
-      console.log(newImage)
+
       createImageCards(newImage)
       document.querySelector(".Generator-Result").style.display = "none"
       document.querySelector("#image-collection").style.display = ""
