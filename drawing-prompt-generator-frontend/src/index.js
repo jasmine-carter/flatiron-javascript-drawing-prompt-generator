@@ -134,9 +134,7 @@ function getRandomImages(){
     let allImages = object.data.sort(function(a, b) {
       const imageA = a.attributes.image_caption.toLowerCase()
       const imageB = b.attributes.image_caption.toLowerCase()
-      console.log(imageA[2], imageB[2])
-      console.log(imageA[2] > imageB[2])
-      if (imageA[2] > imageB[2]) {
+      if (imageA > imageB) {
         return 1;
       } else {
         return -1;
